@@ -11,7 +11,7 @@ A microservice for CS361 that sends strings to client
 7. In for loop, send message to to socket. socket.send(b"message here")
 
 REQUEST EXAMPLE (Python):
-import zmq
+```import zmq
 
 context = zmq.Context()
 
@@ -23,7 +23,7 @@ da_list=[]
 
 for request in range(3):
     print(f"Sending request {request} …")
-    socket.send(b"Hello")
+    socket.send(b"Hello")```
 
 # How to RECEIVE data:
 1. Inside current for loop, create and assign variable message = socket.recv()
