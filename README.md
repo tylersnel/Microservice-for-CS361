@@ -5,7 +5,7 @@ A microservice for CS361 that sends strings to client
 1. MUST import Zeromq library. See https://zeromq.org/get-started/ on how to import.
 2. Create and set variable context=zmq.Context()
 3. Create and set variable socket = context.socket(zmq.REQ)
-4. Connect to socket. soecket.connect("tcp://some_address")
+4. Connect to socket.connect("tcp://some_address")
 5. Create a list to receive data
 6. Create for loop in range for requests.
 7. In for loop, send message to to socket. socket.send(b"message here")
