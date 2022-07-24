@@ -32,13 +32,16 @@ for request in range(3):
 3. Append message to list created earlier. da_list.append(message)
 
 RECEIVE EXAMPLE (Python):
+```
     message = socket.recv()
     print(f"Received {message} ")
     message=message.decode("utf-8")
     da_list.append(message)
+```
     
 # OVERALL EXAMPLE (Python):
- import zmq
+```
+import zmq
 
 context = zmq.Context()
 
@@ -56,5 +59,5 @@ for request in range(3):
     print(f"Received {message} ")
     message=message.decode("utf-8")
     da_list.append(message)
- 
+ ```
  
