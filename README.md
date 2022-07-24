@@ -11,7 +11,8 @@ A microservice for CS361 that sends strings to client
 7. In for loop, send message to to socket. socket.send(b"message here")
 
 REQUEST EXAMPLE (Python):
-```import zmq
+```
+import zmq
 
 context = zmq.Context()
 
