@@ -62,3 +62,7 @@ for request in range(3):
     da_list.append(message)
  ```
  
+ # UML SEQUENCE DIAGRAM
+ ![Capture](https://user-images.githubusercontent.com/67352917/180783774-a3a18e9c-d370-4f63-b0d5-1d69b7251f2d.JPG)
+
+ 
