@@ -64,5 +64,10 @@ for request in range(3):
  
  # UML SEQUENCE DIAGRAM
  ![Capture](https://user-images.githubusercontent.com/67352917/180783774-a3a18e9c-d370-4f63-b0d5-1d69b7251f2d.JPG)
+ 
+ # Installation:
+ 1. See https://zeromq.org/get-started/ on how to add library to IDE
+ 2. Download Server.py
+ 3. Run in seperate terminal in preferred IDE
 
  
