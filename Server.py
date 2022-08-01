@@ -1,3 +1,4 @@
+
 import time
 import zmq
 
@@ -5,13 +6,21 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
 #List where you can put URLs to send to client
-da_list=[]
+da_list=['https://i.imgur.com/6QvWi5Y.jpg',' https://i.imgur.com/T9egMZ1.jpg', 'https://i.imgur.com/ZilR5gd.jpg', 'https://i.imgur.com/aEiQMnX.jpg' ]
 index_pos=0
 while True:
     #  Wait for next request from client
     message = socket.recv()
     print(f"Received {message}")
-
+    message = message.decode("utf-8")
+    if message=='low':
+        index_pos=0
+    if message=='medium':
+        index_pos=1
+    if message=='high':
+        index_pos=2
+    if message=='perfect':
+        index_pos=3
 
 
     #  Do some 'work'
@@ -19,5 +28,5 @@ while True:
 
     #  Send reply back to client
     socket.send_string(da_list[index_pos])
-    index_pos+=1
+
 
