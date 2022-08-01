@@ -6,7 +6,7 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
 #List where you can put URLs to send to client
-da_list=['https://i.imgur.com/6QvWi5Y.jpg',' https://i.imgur.com/T9egMZ1.jpg', 'https://i.imgur.com/ZilR5gd.jpg', 'https://i.imgur.com/aEiQMnX.jpg' ]
+da_list=['https://i.imgur.com/6QvWi5Y.jpg',' https://i.imgur.com/T9egMZ1.jpg', 'https://i.imgur.com/ZilR5gd.jpg', 'https://i.imgur.com/aEiQMnX.jpg', 'Invalid message. Try again' ]
 index_pos=0
 while True:
     #  Wait for next request from client
@@ -15,12 +15,15 @@ while True:
     message = message.decode("utf-8")
     if message=='low':
         index_pos=0
-    if message=='medium':
+    elif message=='medium':
         index_pos=1
-    if message=='high':
+    elif message=='high':
         index_pos=2
-    if message=='perfect':
+    elif message=='perfect':
         index_pos=3
+    else:
+        index_pos=4
+
 
 
     #  Do some 'work'
