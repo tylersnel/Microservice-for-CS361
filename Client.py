@@ -1,3 +1,4 @@
+
 import zmq
 
 context = zmq.Context()
@@ -8,9 +9,9 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 da_list=[]
 
-for request in range(3):
+for request in range(1):
     print(f"Sending request {request} …")
-    socket.send(b"Hello")
+    socket.send(b"message") #message must be 'low', 'medium', 'high' or 'perfect' else error message is sent
 
 
 
@@ -19,9 +20,6 @@ for request in range(3):
     print(f"Received {message} ")
     message=message.decode("utf-8")
     da_list.append(message)
-
-
-print(da_list)
 
 
 
