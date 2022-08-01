@@ -9,6 +9,7 @@ A microservice for CS361 that sends strings to client
 5. Create a list to receive data
 6. Create for loop in range for requests.
 7. In for loop, send message to to socket. socket.send(b"message here")
+8. Message must be 'low', 'medium', 'high' or 'perfect' else error message is sent
 
 REQUEST EXAMPLE (Python):
 ```
@@ -16,15 +17,16 @@ import zmq
 
 context = zmq.Context()
 
-
-print("Connecting to hello world server…")
+#  Socket to talk to server
+print("Connecting to server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 da_list=[]
 
-for request in range(3):
+for request in range(1):
     print(f"Sending request {request} …")
-    socket.send(b"Hello")
+    socket.send(b"message") 
+
 ```
 
 # How to RECEIVE data:
@@ -46,14 +48,15 @@ import zmq
 
 context = zmq.Context()
 
-print("Connecting to server...")
+#  Socket to talk to server
+print("Connecting to server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 da_list=[]
 
-for request in range(3):
+for request in range(1):
     print(f"Sending request {request} …")
-    socket.send(b"Hello")
+    socket.send(b"message") 
 
 
     message = socket.recv()
